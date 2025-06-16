@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Calibri, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #f5f5f5, #e0f7fa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.panda-couple {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.panda {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border: 4px solid #333;
+  border-radius: 50%;
+  position: relative;
+}
+
+.panda::before,
+.panda::after {
+  content: '';
+  position: absolute;
+  background: #333;
+  border-radius: 50%;
+}
+
+.panda.female::before {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: 10px;
+}
+
+.panda.female::after {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  right: 10px;
+}
+
+.panda.male::before {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: 10px;
+  animation: bow 1s infinite alternate;
+}
+
+.panda.male::after {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  right: 10px;
+  animation: bow 1s infinite alternate;
+}
+
+@keyframes bow {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  100% {
+    transform: rotate(10deg) translateY(5px);
+  }
+}
+
+.dialog-box {
+  background-color: #fff3cd;
+  border: 2px dashed #ff9800;
+  padding: 15px;
+  border-radius: 12px;
+  width: 300px;
+  min-height: 80px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ffccbc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-group button:hover {
+  background-color: #ffab91;
+}
